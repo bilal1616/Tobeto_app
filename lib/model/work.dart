@@ -20,12 +20,12 @@ class WorkTab extends StatefulWidget {
 }
 
 class _WorkTabState extends State<WorkTab> {
-  TextEditingController _descriptionController = TextEditingController();
-  TextEditingController _startWorkDateController = TextEditingController();
-  TextEditingController _endWorkDateController = TextEditingController();
-  TextEditingController _companyController = TextEditingController();
-  TextEditingController _positionController = TextEditingController();
-  TextEditingController _sectorController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _startWorkDateController = TextEditingController();
+  final TextEditingController _endWorkDateController = TextEditingController();
+  final TextEditingController _companyController = TextEditingController();
+  final TextEditingController _positionController = TextEditingController();
+  final TextEditingController _sectorController = TextEditingController();
   String _selectedWorkCity = cityList.first;
 
   Skill? selectedSkill;
@@ -60,7 +60,7 @@ class _WorkTabState extends State<WorkTab> {
             _buildStartDateTextField(),
             _buildEndDateTextField(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -72,7 +72,7 @@ class _WorkTabState extends State<WorkTab> {
                         .bodyMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   SizedBox(
@@ -131,7 +131,7 @@ class _WorkTabState extends State<WorkTab> {
                   onPressed: () {
                     _saveWorkToFirestore();
                   },
-                  child: Text(
+                  child: const Text(
                     "Kaydet",
                     style: TextStyle(color: Colors.white),
                   ),
@@ -183,7 +183,6 @@ class _WorkTabState extends State<WorkTab> {
       'endDate': _endWorkDateController.text.trim(),
       'description': _descriptionController.text,
       'city': _selectedWorkCity,
-      // Diğer alanlar buraya eklenebilir
     });
 
     // Yeni iş deneyimi eklendiğinde, kullanıcının profili yenilensin

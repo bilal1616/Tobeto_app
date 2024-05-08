@@ -19,7 +19,7 @@ class SocialMediaTab extends StatefulWidget {
 }
 
 class _SocialMediaTabState extends State<SocialMediaTab> {
-  TextEditingController _socialMediaLinkController = TextEditingController();
+  final TextEditingController _socialMediaLinkController = TextEditingController();
   SocialMedia? selectedMedia;
 
   @override
@@ -49,7 +49,7 @@ class _SocialMediaTabState extends State<SocialMediaTab> {
     });
 
     ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Sosyal medya bilgileri kaydedildi.')));
+        const SnackBar(content: Text('Sosyal medya bilgileri kaydedildi.')));
 
     Navigator.pop(context, true);
   }
@@ -71,7 +71,7 @@ class _SocialMediaTabState extends State<SocialMediaTab> {
               });
             },
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           TextFormField(
             controller: _socialMediaLinkController,
             decoration: InputDecoration(
@@ -83,13 +83,13 @@ class _SocialMediaTabState extends State<SocialMediaTab> {
                   .textTheme
                   .bodyMedium!
                   .copyWith(fontWeight: FontWeight.bold),
-              border: OutlineInputBorder(),
+              border: const OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: _saveSocialMediaToFirestore,
-            child: Text('Kaydet'),
+            child: const Text('Kaydet'),
           ),
         ],
       ),

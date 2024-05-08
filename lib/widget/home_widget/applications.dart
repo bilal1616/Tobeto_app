@@ -72,14 +72,14 @@ class _ApplicationsState extends State<Applications> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Başvurularım'),
+        title: const Text('Başvurularım'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
                 'assets/videoback.png'), // Arka plan resmi burada belirtilmeli
@@ -90,10 +90,10 @@ class _ApplicationsState extends State<Applications> {
           stream: fetchApplications(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Center(child: Text("Başvuru bulunamadı."));
+              return const Center(child: Text("Başvuru bulunamadı."));
             }
 
             List<Map<String, dynamic>> applications = snapshot.data!;
@@ -126,7 +126,7 @@ class _ApplicationsState extends State<Applications> {
     IconData stateIcon = state == "Kabul Edildi" ? Icons.check : Icons.close;
 
     return Card(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       elevation: 5,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Row(
@@ -137,17 +137,17 @@ class _ApplicationsState extends State<Applications> {
             height: 125, // Kartın içerik boyutuna bağlı olarak ayarlanabilir
             decoration: BoxDecoration(
               color: stateColor,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(12),
                 bottomLeft: Radius.circular(12),
               ),
             ),
           ),
-          SizedBox(width: 1), // Şerit ile içerik arasında boşluk
+          const SizedBox(width: 1), // Şerit ile içerik arasında boşluk
           // Kartın içeriği
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -170,23 +170,23 @@ class _ApplicationsState extends State<Applications> {
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
                           color: stateColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
                           state,
-                          style: TextStyle(color: Colors.white, fontSize: 12),
+                          style: const TextStyle(color: Colors.white, fontSize: 12),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       Icon(stateIcon, color: stateColor, size: 20),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           subtitle,
@@ -201,11 +201,11 @@ class _ApplicationsState extends State<Applications> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Row(
                     children: [
                       Icon(stateIcon, color: stateColor, size: 20),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           subtitle1,

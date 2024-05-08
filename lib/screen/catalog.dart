@@ -59,7 +59,7 @@ class _CatalogState extends State<Catalog> {
           ? AppBar(
               title: Image.asset(imagePath, width: 120, height: 60),
               leading: IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: const Icon(Icons.arrow_back),
                 onPressed: () => Navigator.pop(context),
               ),
             )
@@ -72,7 +72,7 @@ class _CatalogState extends State<Catalog> {
               children: [
                 Container(
                   height: 275,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/banner.jpg'),
                       fit: BoxFit.cover,
@@ -86,9 +86,9 @@ class _CatalogState extends State<Catalog> {
                     controller: _searchController,
                     decoration: InputDecoration(
                       hintText: "Eğitim arayın...",
-                      hintStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                      prefixIcon: Icon(Icons.search),
-                      fillColor: Color.fromARGB(221, 234, 234, 234),
+                      hintStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      prefixIcon: const Icon(Icons.search),
+                      fillColor: const Color.fromARGB(221, 234, 234, 234),
                       filled: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50.0)),
@@ -105,7 +105,7 @@ class _CatalogState extends State<Catalog> {
               stream: _catalogStream,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
 
                 final docs = snapshot.data!.docs

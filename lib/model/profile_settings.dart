@@ -35,22 +35,23 @@ class _ProfilTabState extends State<ProfilTab> {
   }
 
   @override
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _surnameController = TextEditingController();
-  TextEditingController _tcController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _countryController = TextEditingController();
-  TextEditingController _districtController = TextEditingController();
-  TextEditingController _socialMediaController = TextEditingController();
-  TextEditingController _oldPasswordController = TextEditingController();
-  TextEditingController _newPasswordController = TextEditingController();
-  TextEditingController _newPasswordAgainController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _birthDateController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _surnameController = TextEditingController();
+  final TextEditingController _tcController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _countryController = TextEditingController();
+  final TextEditingController _districtController = TextEditingController();
+  final TextEditingController _socialMediaController = TextEditingController();
+  final TextEditingController _oldPasswordController = TextEditingController();
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _newPasswordAgainController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _birthDateController = TextEditingController();
 
   DateTime? _selectedBirthDate;
   String _selectedCity = cityList.first;
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
@@ -97,7 +98,7 @@ class _ProfilTabState extends State<ProfilTab> {
               hintText: 'Ülkenizi girin',
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -109,7 +110,7 @@ class _ProfilTabState extends State<ProfilTab> {
                         .bodyMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   SizedBox(
@@ -162,7 +163,7 @@ class _ProfilTabState extends State<ProfilTab> {
                   onPressed: () {
                     _saveProfileToFirestore();
                   },
-                  child: Text(
+                  child: const Text(
                     "Kaydet",
                     style: TextStyle(color: Colors.white),
                   ),
@@ -201,11 +202,11 @@ class _ProfilTabState extends State<ProfilTab> {
         PopupMenuButton<ImageSource>(
           onSelected: _pickImage,
           itemBuilder: (context) => [
-            PopupMenuItem(
+            const PopupMenuItem(
               value: ImageSource.camera,
               child: Text('Kameradan Çek'),
             ),
-            PopupMenuItem(
+            const PopupMenuItem(
               value: ImageSource.gallery,
               child: Text('Galeriden Seç'),
             ),

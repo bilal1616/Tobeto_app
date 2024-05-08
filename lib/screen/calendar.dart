@@ -53,7 +53,7 @@ class _CalendarPageState extends State<CalendarPage> {
                       state.events.any((event) => isSameDay(day, event.date)),
                   onDaySelected: _calendarEventBloc.onDaySelected,
                   onFormatChanged: _calendarEventBloc.onFormatChanged,
-                  calendarStyle: CalendarStyle(
+                  calendarStyle: const CalendarStyle(
                     todayDecoration: BoxDecoration(
                       color: Colors.blueAccent,
                       shape: BoxShape.circle,
@@ -68,25 +68,25 @@ class _CalendarPageState extends State<CalendarPage> {
                     selectedBuilder: (context, date, events) => Container(
                       margin: const EdgeInsets.all(4.0),
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.green,
                         shape: BoxShape.circle,
                       ),
                       child: Text(
                         date.day.toString(),
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ),
                     todayBuilder: (context, date, events) => Container(
                       margin: const EdgeInsets.all(4.0),
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.blueAccent,
                         shape: BoxShape.circle,
                       ),
                       child: Text(
                         date.day.toString(),
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
@@ -163,7 +163,7 @@ class _CalendarPageState extends State<CalendarPage> {
               children: [
                 Text(
                   'Eğitmen: ${event.instructor ?? ''}',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Tarih: $formattedDate',

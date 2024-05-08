@@ -27,8 +27,6 @@ class SkillsTab extends StatefulWidget {
 
 class _SkillsTabState extends State<SkillsTab> {
 
-  @override
-
   String _selectedSkill = skillsList.first;
 
   Skill? selectedSkill;
@@ -48,13 +46,14 @@ class _SkillsTabState extends State<SkillsTab> {
   final CollectionReference settingsCollection =
       FirebaseFirestore.instance.collection('settings');
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -66,7 +65,7 @@ class _SkillsTabState extends State<SkillsTab> {
                       .bodyMedium!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -119,7 +118,7 @@ class _SkillsTabState extends State<SkillsTab> {
                 onPressed: () {
                   _saveSkillsToFirestore();
                 },
-                child: Text(
+                child: const Text(
                   "Kaydet",
                   style: TextStyle(color: Colors.white),
                 ),

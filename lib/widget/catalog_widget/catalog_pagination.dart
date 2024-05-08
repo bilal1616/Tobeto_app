@@ -20,7 +20,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
   Widget pageButton(int number) {
     bool isSelected = number == widget.currentPage;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 2),
+      margin: const EdgeInsets.symmetric(horizontal: 2),
       child: ElevatedButton(
         onPressed: () {
           widget.onPageChanged(number);
@@ -28,18 +28,18 @@ class _PaginationWidgetState extends State<PaginationWidget> {
         style: ElevatedButton.styleFrom(
           foregroundColor: isSelected ? Colors.white : Colors.black,
           backgroundColor: isSelected ? Colors.black : Colors.white,
-          padding: EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
           side: BorderSide(
             color: isSelected ? Colors.black : Colors.grey,
           ),
-          minimumSize: Size(32, 32),
+          minimumSize: const Size(32, 32),
         ),
         child: Text(
           '$number',
-          style: TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 14),
         ),
       ),
     );
@@ -66,7 +66,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         IconButton(
-          icon: Icon(Icons.chevron_left, color: Colors.black),
+          icon: const Icon(Icons.chevron_left, color: Colors.black),
           onPressed: widget.currentPage > 1
               ? () {
                   widget.onPageChanged(widget.currentPage - 1);
@@ -75,7 +75,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
         ),
         ...buildPageButtons(startPage, endPage),
         IconButton(
-          icon: Icon(Icons.chevron_right, color: Colors.black),
+          icon: const Icon(Icons.chevron_right, color: Colors.black),
           onPressed: widget.currentPage < totalPage
               ? () {
                   widget.onPageChanged(widget.currentPage + 1);

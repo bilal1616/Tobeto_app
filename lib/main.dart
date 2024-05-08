@@ -34,11 +34,11 @@ class MyApp extends StatelessWidget {
         home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           builder: (context, state) {
             if (state is AuthenticationUninitialized) {
-              return LoginScreen(); // Başlangıç ekranı
+              return const LoginScreen(); // Başlangıç ekranı
             } else if (state is AuthenticationAuthenticated) {
-              return WelcomePage(); // Giriş yapıldıysa ana sayfa
+              return const WelcomePage(); // Giriş yapıldıysa ana sayfa
             } else {
-              return BottomNavigationBarScreen(); // Giriş yapılmadıysa giriş sayfası
+              return const BottomNavigationBarScreen(); // Giriş yapılmadıysa giriş sayfası
             }
           },
         ),

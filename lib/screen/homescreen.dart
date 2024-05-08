@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.black.withOpacity(0.3),
                           spreadRadius: 2,
                           blurRadius: 7,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         )
                       ]),
                   child: Column(
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 50),
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
                         child: Text(
                           "Ücretsiz eğitimlerle, geleceğin mesleklerinde sen de yerini al.",
                           textAlign: TextAlign.center,
@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Theme.of(context).colorScheme.secondary
                         ],
                       ),
-                      SizedBox(height: 16), // Butonlar arası boşluk
+                      const SizedBox(height: 16), // Butonlar arası boşluk
                       GradientButton(
                         text: 'Kendini değerlendir',
                         onPressed: () {
@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    Reviews(showAppBar: true)),
+                                    const Reviews(showAppBar: true)),
                           );
                         },
                         gradientColors: [
@@ -238,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Theme.of(context).primaryColorDark
                         ],
                       ),
-                      SizedBox(height: 16), // Butonlar arası boşluk
+                      const SizedBox(height: 16), // Butonlar arası boşluk
                       GradientButton(
                         text: 'Öğrenmeye başla',
                         onPressed: () {
@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    Catalog(showAppBar: true)),
+                                    const Catalog(showAppBar: true)),
                           );
                         },
                         gradientColors: [
@@ -303,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildMenuButton(
                 context,
                 'Eğitimlerim',
-                EducationPage(),
+                const EducationPage(),
                 Colors.lightGreen.shade200, // Pastel yeşil renk
               ),
             ],

@@ -30,11 +30,11 @@ class _WelcomePageState extends State<WelcomePage> {
     FirebaseAuth.instance.authStateChanges().first.then((user) {
       if (user != null) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
+          MaterialPageRoute(builder: (context) => const BottomNavigationBarScreen()),
         );
       } else {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LoginScreen()),
+          MaterialPageRoute(builder: (context) => const LoginScreen()),
         );
       }
     });
@@ -74,7 +74,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8),
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 ),
               ),
             ),

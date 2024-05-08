@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => BottomNavigationBarScreen(),
+          builder: (context) => const BottomNavigationBarScreen(),
         ),
       );
     } on FirebaseAuthException catch (error) {
@@ -91,23 +91,23 @@ class _LoginScreenState extends State<LoginScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Parolamı Unuttum"),
+          title: const Text("Parolamı Unuttum"),
           content: TextField(
             controller: emailController,
             keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'E-posta',
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text("İptal"),
+              child: const Text("İptal"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text("Gönder"),
+              child: const Text("Gönder"),
               onPressed: () async {
                 String email = emailController.text.trim();
                 if (email.isNotEmpty) {
@@ -115,13 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     await firebaseAuthInstance.sendPasswordResetEmail(
                         email: email);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text("Parola sıfırlama e-postası gönderildi."),
                       ),
                     );
                   } catch (error) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text(
                             "Parola sıfırlama e-postası gönderilirken bir hata oluştu."),
                       ),
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.of(context).pop();
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text("Lütfen bir e-posta adresi girin."),
                     ),
                   );
@@ -181,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           initialData: true,
                           builder: (context, snapshot) {
                             return snapshot.data == true
-                                ? SizedBox.shrink()
+                                ? const SizedBox.shrink()
                                 : TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: "Kullanıcı Adı"),
@@ -233,19 +233,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          BottomNavigationBarScreen(),
+                                          const BottomNavigationBarScreen(),
                                     ),
                                   );
                                 }
                               },
-                              icon: Icon(FontAwesomeIcons.google,
+                              icon: const Icon(FontAwesomeIcons.google,
                                   color: Colors.white),
-                              label: Text("Google ile Giriş Yap"),
+                              label: const Text("Google ile Giriş Yap"),
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 backgroundColor: AppColor.favoriteButtonColor,
-                                textStyle: TextStyle(color: Colors.white),
-                                padding: EdgeInsets.symmetric(
+                                textStyle: const TextStyle(color: Colors.white),
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 12, vertical: 8),
                               ),
                             ),

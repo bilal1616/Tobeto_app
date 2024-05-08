@@ -10,9 +10,9 @@ class SettingsTab extends StatefulWidget {
 }
 
 class _SettingsTabState extends State<SettingsTab> {
-  TextEditingController _oldPasswordController = TextEditingController();
-  TextEditingController _newPasswordController = TextEditingController();
-  TextEditingController _newPasswordAgainController = TextEditingController();
+  final TextEditingController _oldPasswordController = TextEditingController();
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _newPasswordAgainController = TextEditingController();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -22,22 +22,22 @@ class _SettingsTabState extends State<SettingsTab> {
     bool confirmDelete = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Hesabı Sil"),
-        content: Text("Hesabınızı silmek istediğinize emin misiniz?"),
+        title: const Text("Hesabı Sil"),
+        content: const Text("Hesabınızı silmek istediğinize emin misiniz?"),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text("Hayır"),
+            child: const Text("Hayır"),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true),
-            child: Text("Evet"),
+            child: const Text("Evet"),
           ),
         ],
       ),
     );
 
-    if (confirmDelete != null && confirmDelete) {
+    if (confirmDelete) {
       User? user = _auth.currentUser;
       if (user != null) {
         final String userUid = user.uid;
@@ -56,7 +56,7 @@ class _SettingsTabState extends State<SettingsTab> {
 
         // Kullanıcıyı giriş ekranına yönlendir
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => LoginScreen()),
+          MaterialPageRoute(builder: (context) => const LoginScreen()),
           (Route<dynamic> route) => false,
         );
       }
@@ -116,7 +116,7 @@ class _SettingsTabState extends State<SettingsTab> {
     String newPasswordAgain = _newPasswordAgainController.text;
 
     if (newPassword != newPasswordAgain) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("Yeni şifreler uyuşmuyor."),
         backgroundColor: Colors.red,
       ));
@@ -147,23 +147,23 @@ class _SettingsTabState extends State<SettingsTab> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: <Widget>[
               _buildPasswordField("Eski Şifre", _oldPasswordController),
               _buildPasswordField("Yeni Şifre", _newPasswordController),
               _buildPasswordField(
                   "Yeni Şifre Tekrar", _newPasswordAgainController),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _changePassword,
-                child: Text("Şifreyi Değiştir"),
+                child: const Text("Şifreyi Değiştir"),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _deleteUserAndSubcollections,
                 child:
-                    Text("Hesabı Sil", style: TextStyle(color: Colors.white)),
+                    const Text("Hesabı Sil", style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               ),
             ],
@@ -181,7 +181,7 @@ class _SettingsTabState extends State<SettingsTab> {
         obscureText: true,
         decoration: InputDecoration(
           labelText: label,
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
         ),
       ),
     );

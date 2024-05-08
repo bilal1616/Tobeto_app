@@ -69,25 +69,25 @@ class _CertificateTabState extends State<CertificateTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'Sertifikalarım',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.purple,
             ),
             onPressed: _pickFile,
-            child: Text("Dosya Seç",
+            child: const Text("Dosya Seç",
                 style: TextStyle(
                   color: Colors.white,
                 )),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           _selectedFile != null
               ? Text("Seçilen Dosya: ${_selectedFile!.path}")
-              : Text("Henüz dosya seçilmedi."),
+              : const Text("Henüz dosya seçilmedi."),
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
@@ -99,7 +99,7 @@ class _CertificateTabState extends State<CertificateTab> {
                 onPressed: () {
                   _saveCertificatesToFirestore();
                 },
-                child: Text(
+                child: const Text(
                   "Kaydet",
                   style: TextStyle(color: Colors.white),
                 ),

@@ -21,12 +21,10 @@ class EductionTab extends StatefulWidget {
 
 class _EductionTabState extends State<EductionTab> {
   @override
-  TextEditingController _universityController = TextEditingController();
-  TextEditingController _sectionController = TextEditingController();
-
-  TextEditingController _startEducationDateController = TextEditingController();
-
-  TextEditingController _graduateDateController = TextEditingController();
+  final TextEditingController _universityController = TextEditingController();
+  final TextEditingController _sectionController = TextEditingController();
+  final TextEditingController _startEducationDateController = TextEditingController(); 
+  final TextEditingController _graduateDateController = TextEditingController();
 
   DateTime? _selectedStartEducationDate;
   DateTime? _selectedEndEducationDate;
@@ -35,6 +33,7 @@ class _EductionTabState extends State<EductionTab> {
   Skill? selectedSkill;
   SocialMedia? selectedMedia;
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
@@ -55,7 +54,7 @@ class _EductionTabState extends State<EductionTab> {
               hintText: 'Yazılım',
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,7 +66,7 @@ class _EductionTabState extends State<EductionTab> {
                         .bodyMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   SizedBox(
@@ -122,7 +121,7 @@ class _EductionTabState extends State<EductionTab> {
                   onPressed: () {
                     _saveEducationToFirestore();
                   },
-                  child: Text(
+                  child: const Text(
                     "Kaydet",
                     style: TextStyle(color: Colors.white),
                   ),
@@ -171,7 +170,7 @@ class _EductionTabState extends State<EductionTab> {
               hintText: 'Yazılım',
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -183,7 +182,7 @@ class _EductionTabState extends State<EductionTab> {
                         .bodyMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   SizedBox(
@@ -238,7 +237,7 @@ class _EductionTabState extends State<EductionTab> {
                   onPressed: () {
                     _saveEducationToFirestore();
                   },
-                  child: Text(
+                  child: const Text(
                     "Kaydet",
                     style: TextStyle(color: Colors.white),
                   ),

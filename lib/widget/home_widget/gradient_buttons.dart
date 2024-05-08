@@ -21,7 +21,7 @@ class GradientButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
           horizontal: 24, vertical: 8), // Dışarıdan padding
       child: Card(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(0), // Sol üst köşe sabit
             topRight: Radius.circular(20), // Sağ üst köşe yuvarlak
@@ -33,9 +33,9 @@ class GradientButton extends StatelessWidget {
         child: Container(
           width: width,
           height: 160, // Yükseklik arttırıldı
-          padding: EdgeInsets.only(top: 16, bottom: 16), // İç padding
+          padding: const EdgeInsets.only(top: 16, bottom: 16), // İç padding
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(0),
               topRight: Radius.circular(20),
               bottomLeft: Radius.circular(30),
@@ -53,7 +53,7 @@ class GradientButton extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 20, // Metin boyutunu arttır
@@ -75,7 +75,7 @@ class GradientButton extends StatelessWidget {
                   width: 210, // Butonu konteynırın genişliğine göre genişlet
                   height: 20, // Butonun yüksekliği
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Başla',
                     style: TextStyle(
                       color: Colors.white,

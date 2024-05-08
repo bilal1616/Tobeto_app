@@ -45,13 +45,13 @@ void showReviewCategoryDialog(BuildContext context, String title) {
         builder: (BuildContext context,
             AsyncSnapshot<Map<String, dynamic>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
             return Center(child: Text("Error: ${snapshot.error}"));
           }
           if (!snapshot.hasData) {
-            return Center(child: Text("No data available"));
+            return const Center(child: Text("No data available"));
           }
           var reviewData = snapshot.data!;
           return AlertDialog(
@@ -59,10 +59,10 @@ void showReviewCategoryDialog(BuildContext context, String title) {
               children: [
                 Expanded(
                     child: Text(title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold))),
                 IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
               ],
@@ -75,22 +75,22 @@ void showReviewCategoryDialog(BuildContext context, String title) {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     "${reviewData['subtitle']}",
-                    style: TextStyle(fontSize: 17),
+                    style: const TextStyle(fontSize: 17),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                   Text(
                     "Sınav Süresi: ${reviewData['exam duration']}",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     "Soru Sayısı: ${reviewData['number of questions']}",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     "Soru Tipi: ${reviewData['question type']}",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                 ],
@@ -110,7 +110,7 @@ void showReviewCategoryDialog(BuildContext context, String title) {
                                 )),
                       );
                     },
-                    child: Text('Sınava Başla'),
+                    child: const Text('Sınava Başla'),
                   ),
                 ],
               ),

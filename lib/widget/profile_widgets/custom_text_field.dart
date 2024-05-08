@@ -9,7 +9,7 @@ class CompCustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final bool obscureText;
 
-  CompCustomTextField({
+  const CompCustomTextField({
     Key? key,
     this.inputFormatters,
     this.hintText,
@@ -22,7 +22,7 @@ class CompCustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,7 +35,7 @@ class CompCustomTextField extends StatelessWidget {
                   .bodyMedium!
                   .copyWith(fontWeight: FontWeight.bold),
             ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           SizedBox(
@@ -52,7 +52,7 @@ class CompCustomTextField extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.bold),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.grey,
                   ),
                 ),

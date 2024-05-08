@@ -39,22 +39,22 @@ class _ReviewsdescriptioncardState extends State<Reviewsdescriptioncard> {
 
     return Card(
       margin: const EdgeInsets.all(14),
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: const Radius.circular(0),
-          topRight: const Radius.circular(20),
-          bottomLeft: const Radius.circular(30),
-          bottomRight: const Radius.circular(30),
+          topLeft: Radius.circular(0),
+          topRight: Radius.circular(20),
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
         ),
       ),
       child: Container(
         width: cardWidth,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(0),
-            topRight: const Radius.circular(20),
-            bottomLeft: const Radius.circular(30),
-            bottomRight: const Radius.circular(30),
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(0),
+            topRight: Radius.circular(20),
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
           ),
           gradient: LinearGradient(
             begin: Alignment.topLeft,

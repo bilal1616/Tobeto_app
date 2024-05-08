@@ -144,7 +144,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
           _buildVideoPlayer(),
           AnimatedOpacity(
             opacity: _isControlVisible ? 1.0 : 0.0,
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             child: Container(
               color: Colors.transparent,
               height: 48.0,
@@ -182,7 +182,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
                 },
                 child: AnimatedOpacity(
                   opacity: _isControlVisible ? 1.0 : 0.0,
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   child: Container(
                     color: Colors.transparent,
                     height: 48.0,
@@ -219,13 +219,13 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
             aspectRatio: _controller.value.aspectRatio,
             child: VideoPlayer(_controller),
           )
-        : Center(child: CircularProgressIndicator());
+        : const Center(child: CircularProgressIndicator());
   }
 
   Widget _buildVideoList() {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: widget.videos.length,
       itemBuilder: (context, index) {
         final video = widget.videos[index];
@@ -233,7 +233,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
         return ListTile(
           title: Text(video.title),
           trailing: IconButton(
-            icon: isCompleted ? Icon(Icons.lock) : Icon(Icons.play_arrow),
+            icon: isCompleted ? const Icon(Icons.lock) : const Icon(Icons.play_arrow),
             onPressed: isCompleted
                 ? null
                 : () => _playVideo(video), // Tamamlandıysa onPressed'i devre dışı bırakın
@@ -272,10 +272,10 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            icon: Icon(Icons.replay_10),
+            icon: const Icon(Icons.replay_10),
             color: Colors.white,
             onPressed: () => _controller.seekTo(
-              _controller.value.position - Duration(seconds: 10),
+              _controller.value.position - const Duration(seconds: 10),
             ),
           ),
           IconButton(
@@ -303,10 +303,10 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.forward_10),
+            icon: const Icon(Icons.forward_10),
             color: Colors.white,
             onPressed: () => _controller.seekTo(
-              _controller.value.position + Duration(seconds: 10),
+              _controller.value.position + const Duration(seconds: 10),
             ),
           ),
           IconButton(
@@ -357,7 +357,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Son İzlenen Yerden Devam Edilsin Mi?'),
+          title: const Text('Son İzlenen Yerden Devam Edilsin Mi?'),
           content: Text(
               'Videoyu ${lastWatchedPercentage.toInt()}% izlemişsiniz. Son izlenen yerden devam etmek ister misiniz?'),
           actions: [
@@ -365,7 +365,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Hayır'),
+              child: const Text('Hayır'),
             ),
             TextButton(
               onPressed: () {
@@ -378,7 +378,7 @@ class _EducationVideoPlayerState extends State<EducationVideoPlayer> {
                         .toInt()));
                 _controller.play(); // Videoyu oynat
               },
-              child: Text('Evet'),
+              child: const Text('Evet'),
             ),
           ],
         );

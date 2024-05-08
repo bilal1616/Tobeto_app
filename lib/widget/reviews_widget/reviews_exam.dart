@@ -47,12 +47,12 @@ class _ReviewsExamState extends State<ReviewsExam> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text('Doğru Cevap: $correctCount',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
-              SizedBox(height: 20),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+              const SizedBox(height: 20),
               Text('Yanlış Cevap: ${totalCount - correctCount}',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
             ],
           ),
           actions: [
@@ -61,7 +61,7 @@ class _ReviewsExamState extends State<ReviewsExam> {
                 Navigator.of(context).pop();
                 saveResult(correctCount, totalCount - correctCount);
               },
-              child: Text('Tamam'),
+              child: const Text('Tamam'),
             ),
           ],
         );
@@ -97,22 +97,22 @@ class _ReviewsExamState extends State<ReviewsExam> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Sınav sonucu'),
+            title: const Text('Sınav sonucu'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text('Sınav: ${examResult['examTitle']}',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
-                SizedBox(height: 20),
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                const SizedBox(height: 20),
                 Text('Doğru Cevap: ${examResult['Correct']}',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
-                SizedBox(height: 20),
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                const SizedBox(height: 20),
                 Text('Yanlış Cevap: ${examResult['Incorrect']}',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
               ],
             ),
             actions: [
@@ -120,7 +120,7 @@ class _ReviewsExamState extends State<ReviewsExam> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('Tamam'),
+                child: const Text('Tamam'),
               ),
             ],
           );
@@ -142,9 +142,9 @@ class _ReviewsExamState extends State<ReviewsExam> {
       children: [
         Text(
           '$questionNumber) $question',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         RadioButtonGroup(
           options: options,
           onChanged: (value) {
@@ -154,7 +154,7 @@ class _ReviewsExamState extends State<ReviewsExam> {
           },
           selectedOption: examBloc.selectedOptions[questionNumber],
         ),
-        Divider(),
+        const Divider(),
       ],
     );
   }
@@ -172,7 +172,7 @@ class _ReviewsExamState extends State<ReviewsExam> {
             List<ExamQuestion> questions = snapshot.data!;
             return SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -187,23 +187,23 @@ class _ReviewsExamState extends State<ReviewsExam> {
                         );
                       }),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: finishExam,
-                      child: Text('Sınavı Bitir'),
+                      child: const Text('Sınavı Bitir'),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: showExamResult,
-                      child: Text('Sınav Sonucunu Göster'),
+                      child: const Text('Sınav Sonucunu Göster'),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).pop();
                       },
-                      child: Text('Çıkış Yap'),
+                      child: const Text('Çıkış Yap'),
                     ),
                   ],
                 ),
@@ -214,7 +214,7 @@ class _ReviewsExamState extends State<ReviewsExam> {
               child: Text('Error: ${snapshot.error}'),
             );
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }

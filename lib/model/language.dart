@@ -29,17 +29,18 @@ class _LanguageTabState extends State<LanguageTab> {
   String _selectedLanguage = languageList.first;
   String _selectedLanguageLevel = languageLevelList.first;
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Yabancı Dil Seçin",
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -47,7 +48,7 @@ class _LanguageTabState extends State<LanguageTab> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -85,11 +86,11 @@ class _LanguageTabState extends State<LanguageTab> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Seviye Seçin",
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -97,7 +98,7 @@ class _LanguageTabState extends State<LanguageTab> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -145,7 +146,7 @@ class _LanguageTabState extends State<LanguageTab> {
                 onPressed: () {
                   _saveLanguageToFirestore();
                 },
-                child: Text(
+                child: const Text(
                   "Kaydet",
                   style: TextStyle(color: Colors.white),
                 ),
@@ -175,7 +176,7 @@ class _LanguageTabState extends State<LanguageTab> {
 
     // Kullanıcıya bilgi vermek için snackbar gösterimi
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Dil bilgileri başarıyla kaydedildi.')),
+      const SnackBar(content: Text('Dil bilgileri başarıyla kaydedildi.')),
     );
 
     // Kayıt sonrası önceki sayfaya dön

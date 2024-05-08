@@ -33,7 +33,7 @@ class _ExamCardState extends State<ExamCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.all(10),
           child: Text(
             "Sınavlarım",
@@ -47,14 +47,14 @@ class _ExamCardState extends State<ExamCard> {
           future: fetchExams(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
             if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Text("Sınav bulunamadı.");
+              return const Text("Sınav bulunamadı.");
             }
 
             return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Container(
                 height: 220,
                 decoration: BoxDecoration(
@@ -65,7 +65,7 @@ class _ExamCardState extends State<ExamCard> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 7,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -88,11 +88,11 @@ class _ExamCardState extends State<ExamCard> {
       onTap: () => showExamDetails(context, exam),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: Container(
           width: 180,
           height: 220,
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Stack(
             children: [
               Column(
@@ -108,7 +108,7 @@ class _ExamCardState extends State<ExamCard> {
                       maxLines: 6,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     exam['subtitle'],
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -117,7 +117,7 @@ class _ExamCardState extends State<ExamCard> {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 6,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
                       Icon(
@@ -125,7 +125,7 @@ class _ExamCardState extends State<ExamCard> {
                         size: 21,
                         color: Theme.of(context).colorScheme.primary,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
                         exam['duration'],
                         style: Theme.of(context)
@@ -146,7 +146,7 @@ class _ExamCardState extends State<ExamCard> {
                 child: Container(
                   width: 24,
                   height: 24,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/converted.png'),
                       fit: BoxFit.cover,
@@ -169,7 +169,7 @@ class _ExamCardState extends State<ExamCard> {
         return FractionallySizedBox(
           heightFactor: 0.7,
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -179,28 +179,28 @@ class _ExamCardState extends State<ExamCard> {
                       color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   'Sınav Süresi: ${exam['content duration']}',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   'Soru Sayısı: ${exam['content question']}',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   'Soru Tipi: ${exam['content type']}',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Text(
@@ -217,7 +217,7 @@ class _ExamCardState extends State<ExamCard> {
                       showReportDetails(context,
                           userId); // Raporları görüntüle fonksiyonunu çağır
                     },
-                    child: Text('Raporları Görüntüle',
+                    child: const Text('Raporları Görüntüle',
                         style: TextStyle(fontSize: 18)),
                   ),
                 ),
@@ -252,7 +252,7 @@ class _ExamCardState extends State<ExamCard> {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -267,35 +267,35 @@ class _ExamCardState extends State<ExamCard> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Doğru: ${reportDetails['correct']}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Yanlış: ${reportDetails['incorrect']}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Boş: ${reportDetails['empty']}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Puan: ${reportDetails['score']}',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Align(
                 alignment: Alignment.center,
                 child: ElevatedButton(

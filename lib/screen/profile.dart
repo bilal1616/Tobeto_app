@@ -293,7 +293,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             color: Colors.grey.withOpacity(0.5),
                             spreadRadius: 5,
                             blurRadius: 7,
-                            offset: Offset(0, 3),
+                            offset: const Offset(0, 3),
                           ),
                         ],
                         color: Theme.of(context).scaffoldBackgroundColor,
@@ -323,7 +323,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                         profilePictureURL,
                                       ),
                                     )
-                                  : CircleAvatar(
+                                  : const CircleAvatar(
                                       backgroundColor: Color(0xFF41528f),
                                       radius: 80,
                                       child: Icon(
@@ -333,16 +333,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                       )),
                             ),
                           ),
-                          SizedBox(height: 40),
+                          const SizedBox(height: 40),
                           _buildPersonalInfo("Ad Soyad", "$name $surname",
                               "assets/cv-name.png"),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           _buildPersonalInfo(
                               "Doğum Tarihi", birthDate, "assets/cv-date.png"),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           _buildPersonalInfo(
                               "E-mail", email, "assets/cv-mail.png"),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           _buildPersonalInfo(
                               "Telefon", phone, "assets/cv-phone.png"),
                           _buildPersonalInfo("Şehir", city, "assets/city.png"),
@@ -366,7 +366,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           backgroundColor:
                               Theme.of(context).colorScheme.primary,
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(Icons.delete), // Silme ikonu
                             SizedBox(width: 3), // İkon ile metin arasına boşluk
@@ -392,7 +392,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                     color: Theme.of(context).scaffoldBackgroundColor,
@@ -400,8 +400,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -428,7 +428,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                                 "İşte Başarı Modeli değerlendirmesiyle Yetkinliklerini Ölç "),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
@@ -438,10 +438,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ViewReport()),
+                                      builder: (context) => const ViewReport()),
                                 );
                               },
-                              child: Text(
+                              child: const Text(
                                 'Başla',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -486,11 +486,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   }
                 });
               },
-              child: Padding(
+              child: const Padding(
                 padding: const EdgeInsets.only(left: 1, right: 10),
                 child: Icon(Icons.edit_note),
               )),
-          Icon(Icons.share_outlined),
+          const Icon(Icons.share_outlined),
         ],
       ),
     );
@@ -516,7 +516,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             color: Colors.grey.withOpacity(0.5),
                             spreadRadius: 5,
                             blurRadius: 7,
-                            offset: Offset(0, 3),
+                            offset: const Offset(0, 3),
                           ),
                         ],
                       ),
@@ -527,7 +527,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -622,12 +622,12 @@ class _ProfilePageState extends State<ProfilePage> {
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Profil bilgileri başarıyla silindi.")),
+        const SnackBar(content: Text("Profil bilgileri başarıyla silindi.")),
       );
     } catch (e) {
       print("Hata oluştu: $e");
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Profil bilgileri silinirken bir hata oluştu.")),
+        const SnackBar(content: Text("Profil bilgileri silinirken bir hata oluştu.")),
       );
     }
   }
@@ -659,7 +659,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     foregroundColor: Colors.white,
                     backgroundColor: Theme.of(context).colorScheme.primary,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.delete), // Silme ikonu
@@ -679,7 +679,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -687,7 +687,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
@@ -719,7 +719,7 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Bilgiyi Sil"),
+          title: const Text("Bilgiyi Sil"),
           content:
               Text("'$fieldName' bilgisini silmek istediğinize emin misiniz?"),
           actions: <Widget>[
@@ -727,7 +727,7 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Hayır",
                 style: TextStyle(color: Colors.black),
               ),
@@ -737,7 +737,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 _deleteProfileInfoAll(fieldName);
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Evet",
                 style: TextStyle(color: Colors.red),
               ),
@@ -826,7 +826,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -837,7 +837,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset('assets/rozet1.jpg', height: 125, width: 150),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Image.asset('assets/rozet2.jpg', height: 125, width: 150),
                 ],
               ),
@@ -861,7 +861,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -874,7 +874,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     foregroundColor: Colors.white,
                     backgroundColor: Theme.of(context).colorScheme.primary,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.delete), // Silme ikonu
@@ -894,7 +894,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -904,7 +904,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Container(
@@ -913,7 +913,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   certificateURL.isNotEmpty
                       ? Center(
                           child: Container(
@@ -925,7 +925,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ),
                         )
-                      : Center(
+                      : const Center(
                           child: Text("Henüz bir sertifika eklemediniz."),
                         ),
                 ],
@@ -942,7 +942,7 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Sertifika Sil"),
+          title: const Text("Sertifika Sil"),
           content:
               Text("'$title' sertifikasını silmek istediğinize emin misiniz?"),
           actions: <Widget>[
@@ -950,7 +950,7 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Hayır",
                 style: TextStyle(color: Colors.black),
               ),
@@ -960,7 +960,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 _deleteCertificate(title);
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Evet",
                 style: TextStyle(color: Colors.red),
               ),
@@ -1036,7 +1036,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     foregroundColor: Colors.white,
                     backgroundColor: Theme.of(context).colorScheme.primary,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.delete), // Silme ikonu
@@ -1091,14 +1091,14 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Hesap Sil"),
+          title: const Text("Hesap Sil"),
           content: Text("'$title' hesabını silmek istediğinize emin misiniz?"),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Hayır",
                 style: TextStyle(color: Colors.black),
               ),
@@ -1108,7 +1108,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 _deleteSocialMediaAccount(title);
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Evet",
                 style: TextStyle(color: Colors.red),
               ),
@@ -1145,12 +1145,12 @@ class _ProfilePageState extends State<ProfilePage> {
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Tüm hesaplar başarıyla silindi.")),
+        const SnackBar(content: Text("Tüm hesaplar başarıyla silindi.")),
       );
     } catch (e) {
       print("Hata oluştu: $e");
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Hesaplar silinirken bir hata oluştu.")),
+        const SnackBar(content: Text("Hesaplar silinirken bir hata oluştu.")),
       );
     }
   }

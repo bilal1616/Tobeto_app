@@ -24,10 +24,10 @@ class _ViewReportState extends State<ViewReport> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text('Raporu Görüntüle'),
+        title: const Text('Raporu Görüntüle'),
         centerTitle: false,
       ),
       body: SingleChildScrollView(
@@ -36,7 +36,7 @@ class _ViewReportState extends State<ViewReport> {
           children: [
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               alignment: Alignment.center,
               child: Text(
                 'Tobeto "İşte Başarı Modeli"',
@@ -48,9 +48,9 @@ class _ViewReportState extends State<ViewReport> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Center(
+            const Center(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Analiz Raporum',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -63,7 +63,7 @@ class _ViewReportState extends State<ViewReport> {
               child: Container(
                 width: double.infinity,
                 height: 250,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/diyagram.jpg"),
                     fit: BoxFit.contain,
@@ -105,9 +105,9 @@ class _ViewReportState extends State<ViewReport> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             color: colors[index],
-            child: Text(
+            child: const Text(
               '5.0',
               style: TextStyle(
                 color: Colors.white,
@@ -118,7 +118,7 @@ class _ViewReportState extends State<ViewReport> {
           SizedBox(width: MediaQuery.of(context).size.height * 0.02),
           Text(
             description,
-            style: TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14),
           ),
         ],
       ),

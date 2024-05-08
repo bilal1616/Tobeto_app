@@ -9,12 +9,12 @@ class ReviewsNotbutton extends StatelessWidget {
 
     return ListView(
       shrinkWrap: true,
-      physics: ScrollPhysics(),
+      physics: const ScrollPhysics(),
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Card(
-          margin: EdgeInsets.all(14),
-          shape: RoundedRectangleBorder(
+          margin: const EdgeInsets.all(14),
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0),
               topRight: Radius.circular(20),
@@ -25,7 +25,7 @@ class ReviewsNotbutton extends StatelessWidget {
           child: Container(
             width: cardWidth,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(0),
                 topRight: Radius.circular(20),
                 bottomLeft: Radius.circular(30),
@@ -48,7 +48,7 @@ class ReviewsNotbutton extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                  Text(
+                  const Text(
                     'Yazılımda Başarı Testi',
                     style: TextStyle(
                       color: Colors.white,
@@ -57,7 +57,7 @@ class ReviewsNotbutton extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                  Text(
+                  const Text(
                     'Çoktan seçmeli sorular',
                     style: TextStyle(
                       color: Colors.white,
@@ -65,7 +65,7 @@ class ReviewsNotbutton extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'ile teknik bilgini test et.',
                     style: TextStyle(
                       color: Colors.white,
@@ -78,7 +78,7 @@ class ReviewsNotbutton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       3,
-                      (index) => Icon(Icons.arrow_forward_ios_rounded,
+                      (index) => const Icon(Icons.arrow_forward_ios_rounded,
                           color: Colors.white, size: 12),
                     ),
                   ),

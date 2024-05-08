@@ -56,7 +56,7 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Theme.of(context).colorScheme.onBackground),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 16), // Başlık ve içerik arasında boşluk bırakır.
                 Text(
                   announcement['content'],
@@ -76,13 +76,13 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Duyuru ve Haberlerim'),
+        title: const Text('Duyuru ve Haberlerim'),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop()),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
                 'assets/videoback.png'), // Arka plan resmi burada belirtilmeli
@@ -93,10 +93,10 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
           stream: fetchAnnouncements(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Center(child: Text("Duyuru bulunamadı."));
+              return const Center(child: Text("Duyuru bulunamadı."));
             }
 
             return ListView.builder(
@@ -107,7 +107,7 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                 String formattedDate = DateFormat('dd.MM.yyyy').format(date);
 
                 return Card(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   elevation: 5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
@@ -116,14 +116,14 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                       Container(
                           width: 5,
                           height: 155,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(12),
                                   bottomLeft: Radius.circular(12)))),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(16),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -132,11 +132,11 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(announcement['type'],
-                                        style: TextStyle(color: Colors.green)),
+                                        style: const TextStyle(color: Colors.green)),
                                     Text(announcement['type2'],
-                                        style: TextStyle(color: Colors.green))
+                                        style: const TextStyle(color: Colors.green))
                                   ]),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                               Text(announcement['title'],
                                   style: Theme.of(context)
                                       .textTheme
@@ -145,18 +145,18 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                                           color: Theme.of(context)
                                               .colorScheme
                                               .onBackground)),
-                              SizedBox(height: 18),
+                              const SizedBox(height: 18),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.calendar_today,
                                       size: 20,
                                       color: Colors.black,
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Text(
                                       formattedDate,
                                       style: Theme.of(context)
@@ -175,7 +175,7 @@ class _AnnouncementAndNewsState extends State<AnnouncementAndNews> {
                                               onPressed: () =>
                                                   showAnnouncementDetails(
                                                       context, announcement),
-                                              child: Text("Devamını Oku",
+                                              child: const Text("Devamını Oku",
                                                   style: TextStyle(
                                                       color: Colors.grey,
                                                       fontSize: 16),

@@ -29,7 +29,7 @@ class _ReviewsState extends State<Reviews> {
                 height: 60,
               ),
               leading: IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: const Icon(Icons.arrow_back),
                 onPressed: () => Navigator.pop(context),
               ),
             )
@@ -90,8 +90,8 @@ class _ReviewsState extends State<Reviews> {
                   ]),
                 ),
               ),
-              ReviewsButton(),
-              ReviewsNotbutton(),
+              const ReviewsButton(),
+              const ReviewsNotbutton(),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               ...reviewCategories
                   .map((category) => Card(
@@ -108,7 +108,7 @@ class _ReviewsState extends State<Reviews> {
                           ),
                           title: Text(
                             category['title'],
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                           trailing: ElevatedButton(
                             onPressed: () {

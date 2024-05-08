@@ -10,12 +10,12 @@ class ReviewsButton extends StatelessWidget {
 
     return ListView(
       shrinkWrap: true,
-      physics: ScrollPhysics(),
+      physics: const ScrollPhysics(),
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Card(
-          margin: EdgeInsets.all(14),
-          shape: RoundedRectangleBorder(
+          margin: const EdgeInsets.all(14),
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0),
               topRight: Radius.circular(20),
@@ -26,7 +26,7 @@ class ReviewsButton extends StatelessWidget {
           child: Container(
             width: cardWidth,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(0),
                 topRight: Radius.circular(20),
                 bottomLeft: Radius.circular(30),
@@ -50,7 +50,7 @@ class ReviewsButton extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                  Text(
+                  const Text(
                     'Tobeto İşte Başarı Modeli',
                     style: TextStyle(
                       color: Colors.white,
@@ -59,7 +59,7 @@ class ReviewsButton extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                  Text(
+                  const Text(
                     '80 soru ile yetkinliklerini ölç,\nönerilen eğitimleri tamamla,',
                     style: TextStyle(
                       color: Colors.white,
@@ -67,7 +67,7 @@ class ReviewsButton extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'rozetini kazan.',
                     style: TextStyle(
                       color: Colors.white,
@@ -80,12 +80,12 @@ class ReviewsButton extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ViewReport()),
+                        MaterialPageRoute(builder: (context) => const ViewReport()),
                       );
                     },
                     child: Text(
                       'Raporu Görüntüle',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
@@ -94,7 +94,7 @@ class ReviewsButton extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                       ),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 18, vertical: 2),
+                          const EdgeInsets.symmetric(horizontal: 18, vertical: 2),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),

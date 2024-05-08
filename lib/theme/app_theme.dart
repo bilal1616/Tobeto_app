@@ -34,7 +34,7 @@ class AppTheme {
             backgroundColor: AppColor.colorScheme.primary,
             foregroundColor: AppColor.colorScheme.background),
       ),
-      cardColor: Color(0xFFFFFFFF)
+      cardColor: const Color(0xFFFFFFFF)
     );
   }
 
@@ -68,7 +68,7 @@ class AppTheme {
             backgroundColor: AppColor.colorScheme.primary,
             foregroundColor: AppColor.colorScheme.background),
       ), colorScheme: AppColor.colorScheme.copyWith(background: AppColor.backgroundDark),
-      cardColor: Color(0xFF000000)
+      cardColor: const Color(0xFF000000)
     );
   }
 }

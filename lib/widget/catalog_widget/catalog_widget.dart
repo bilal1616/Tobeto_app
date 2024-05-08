@@ -34,7 +34,7 @@ class CatalogWidget extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5), // Kart gölgesi rengi
               spreadRadius: 3,
               blurRadius: 5,
-              offset: Offset(0, 3), // Kart gölgesi ofseti
+              offset: const Offset(0, 3), // Kart gölgesi ofseti
             ),
           ],
         ),
@@ -52,7 +52,7 @@ class CatalogWidget extends StatelessWidget {
               left: 0.0,
               child: Container(
                 width: screenWidth,
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 color: Colors.black.withOpacity(0.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +63,7 @@ class CatalogWidget extends StatelessWidget {
                           Icons.person,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           catalogModel.name,
                           style: const TextStyle(
@@ -71,22 +71,22 @@ class CatalogWidget extends StatelessWidget {
                             fontSize: 16.0,
                           ),
                         ),
-                        SizedBox(width: 10),
-                        Icon(
+                        const SizedBox(width: 10),
+                        const Icon(
                           Icons.access_time,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           catalogModel.time,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       catalogModel.title,
                       style: const TextStyle(

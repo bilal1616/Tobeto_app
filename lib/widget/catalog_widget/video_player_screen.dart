@@ -41,7 +41,7 @@ class _VideoAppState extends State<VideoApp> {
         children: [
           // Arka plan resmi
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/videoback.png'),
                 fit: BoxFit.cover,
@@ -58,8 +58,8 @@ class _VideoAppState extends State<VideoApp> {
                         aspectRatio: _controller.value.aspectRatio,
                         child: VideoPlayer(_controller),
                       )
-                    : Center(child: CircularProgressIndicator()),
-                _isControlVisible ? _videoControls(context) : SizedBox.shrink(),
+                    : const Center(child: CircularProgressIndicator()),
+                _isControlVisible ? _videoControls(context) : const SizedBox.shrink(),
               ],
             ),
           ),
@@ -71,7 +71,7 @@ class _VideoAppState extends State<VideoApp> {
   Widget _videoControls(BuildContext context) {
     return AnimatedOpacity(
       opacity: _isControlVisible ? 1.0 : 0.0,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       child: Container(
         color: Colors.black45,
         padding: const EdgeInsets.all(8.0),
@@ -79,10 +79,10 @@ class _VideoAppState extends State<VideoApp> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              icon: Icon(Icons.replay_10),
+              icon: const Icon(Icons.replay_10),
               color: Colors.white,
               onPressed: () => _controller
-                  .seekTo(_controller.value.position - Duration(seconds: 10)),
+                  .seekTo(_controller.value.position - const Duration(seconds: 10)),
             ),
             IconButton(
               icon: Icon(
@@ -107,13 +107,13 @@ class _VideoAppState extends State<VideoApp> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.forward_10),
+              icon: const Icon(Icons.forward_10),
               color: Colors.white,
               onPressed: () => _controller
-                  .seekTo(_controller.value.position + Duration(seconds: 10)),
+                  .seekTo(_controller.value.position + const Duration(seconds: 10)),
             ),
             IconButton(
-              icon: Icon(Icons.fullscreen),
+              icon: const Icon(Icons.fullscreen),
               color: Colors.white,
               onPressed: _toggleFullScreen,
             ),

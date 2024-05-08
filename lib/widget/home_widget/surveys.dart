@@ -15,9 +15,9 @@ class _SurveysState extends State<Surveys> {
     if (userId == null) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Anketlerim'),
+          title: const Text('Anketlerim'),
         ),
-        body: Center(
+        body: const Center(
           child: Text("Lütfen giriş yapın."),
         ),
       );
@@ -25,14 +25,14 @@ class _SurveysState extends State<Surveys> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Anketlerim'),
+        title: const Text('Anketlerim'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
                 'assets/videoback.png'), // Arka plan resmi burada belirtilmeli
@@ -46,7 +46,7 @@ class _SurveysState extends State<Surveys> {
               .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             var userDoc = snapshot.data;
             var surveyIds = List.from(userDoc?['surveys'] ?? []);
@@ -61,7 +61,7 @@ class _SurveysState extends State<Surveys> {
                       .get(),
                   builder: (context, surveySnapshot) {
                     if (!surveySnapshot.hasData) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                     var surveyData = surveySnapshot.data;
                     return _buildSurveyCard(
@@ -79,7 +79,7 @@ class _SurveysState extends State<Surveys> {
   Widget _buildSurveyCard(
       BuildContext context, String? imageUrl, String? title) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 4,
       child: Container(
@@ -89,7 +89,7 @@ class _SurveysState extends State<Surveys> {
         child: Column(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
               child: imageUrl != null && imageUrl.isNotEmpty
                   ? Image.network(imageUrl,
                       width: double.infinity, fit: BoxFit.cover)
@@ -97,7 +97,7 @@ class _SurveysState extends State<Surveys> {
                       width: double.infinity, fit: BoxFit.cover),
             ),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Text(
                 title ?? "Anket Başlığı Bulunamadı",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(

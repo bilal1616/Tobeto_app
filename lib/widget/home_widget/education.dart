@@ -24,17 +24,17 @@ class _SearchFieldState extends State<SearchField> {
         hintText: 'Eğitim ara...',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
           borderSide: BorderSide(color: Theme.of(context).primaryColor),
         ),
-        prefixIcon: Icon(Icons.search),
+        prefixIcon: const Icon(Icons.search),
       ),
     );
   }
@@ -76,7 +76,6 @@ class _EducationPageState extends State<EducationPage> {
         filteredVideos = List.from(videos);
       });
     } catch (e) {
-      // Handle error
       print("Error fetching videos: $e");
     }
   }
@@ -96,9 +95,9 @@ class _EducationPageState extends State<EducationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Eğitimlerim'),
+        title: const Text('Eğitimlerim'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -176,7 +175,7 @@ class EducationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -185,7 +184,7 @@ class EducationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
             child: Image.network(
               imageUrl,
               height: 200,
@@ -194,7 +193,7 @@ class EducationCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -204,14 +203,14 @@ class EducationCard extends StatelessWidget {
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   subtitle,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
                     onCardPressed([
@@ -223,7 +222,7 @@ class EducationCard extends StatelessWidget {
                   child: Text(buttonText),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
-                    minimumSize: Size(double.infinity, 38),
+                    minimumSize: const Size(double.infinity, 38),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
